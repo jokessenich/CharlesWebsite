@@ -7,6 +7,7 @@ import Media from './components/Media'
 import Contact from './components/Contact'
 import Blog from './components/Blog'
 import Awards from './components/Awards'
+import ArtistsMakeArt from './components/ArtistsMakeArt';
 
 export default class Main extends React.Component{
 
@@ -21,6 +22,7 @@ render(){
                 <Route path = '/media' component = {Media}></Route>
                 <Route path = '/awards' component = {Awards}></Route>
                 <Route path = '/blog' component = {Blog}></Route>
+                <Route path = '/artistsmakeart' component = {ArtistsMakeArt}></Route>
                 <Route path = '/contact' component = {Contact}></Route>
             </Switch>
         </div>
