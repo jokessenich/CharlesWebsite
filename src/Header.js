@@ -31,7 +31,7 @@ render(){
         <div>
                     <div className="header">
 
-        <ul className = "fullscreen-links">
+        <ul className = {`fullscreen-links ${this.props.homePage?"home":""}`}>
             {this.props.homePage?"":<li><Link className="navLinks" to = '/'>Home</Link></li>}
             <li><Link className="navLinks" to = '/about'>About</Link></li>
             <li><Link className="navLinks" to = '/works'>Works</Link></li>
