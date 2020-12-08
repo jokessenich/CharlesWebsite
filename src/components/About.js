@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../Header'
+import './About.css'
 export default class About extends React.Component{
 
 
@@ -10,8 +11,8 @@ render(){
 
         <h1> About </h1>
         <h2>Charles Rencountre</h2>
-        <p>
-            Charles Rencountre is a master sculptor who has worked in the materials of stone, wod, metal and now primarily in concrete. He is a 
+        <p className="bio-paragraph">
+            Charles Rencountre is a master sculptor who has worked in the materials of stone, wood, metal and now primarily in concrete. He is a 
             member of the Sicangu people who are from the Lower Brule reservation in what is South Dakota in the United States today.
 
             As a young man, Charles inherited wood and stone from his grandfather, a traditional pipe carver. Charles soon realized he was adept with Pipestone.
@@ -27,7 +28,7 @@ render(){
 
             <br />
 
-            In
+            
         </p>
         </div>
     )
