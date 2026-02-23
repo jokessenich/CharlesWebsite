@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Charles Rencountre</title>
+  <meta name="description" content="Get in touch with Charles Rencountre for commissions, exhibitions, speaking engagements, and collaborations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">Charles Rencountre</a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="exhibitions.html">Exhibitions</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <p class="section-label">Get in Touch</p>
+  <h1 class="page-hero-title">Let&rsquo;s <em>Connect</em></h1>
+  <p class="page-hero-desc">Interested in commissions, exhibitions, speaking engagements, or collaborations? Reach out below.</p>
+</section>
+
+<!-- CONTACT CONTENT -->
+<section class="contact-section">
+  <div class="contact-grid">
+
+    <!-- LEFT: Info -->
+    <div>
+      <div class="contact-info-block">
+        <h3>Email</h3>
+        <a href="mailto:hello@charlesrencountre.com">hello@charlesrencountre.com</a>
+      </div>
+
+      <div class="contact-info-block">
+        <h3>Studio</h3>
+        <p>Santa Fe, New Mexico</p>
+      </div>
+
+      <div class="contact-info-block">
+        <h3>Social</h3>
+        <p>
+          <a href="#">Instagram</a><br>
+          <a href="#">Facebook</a>
+        </p>
+      </div>
+
+      <div class="contact-info-block">
+        <h3>Inquiries Welcome For</h3>
+        <p>
+          Sculpture commissions<br>
+          Exhibition proposals<br>
+          Speaking engagements &amp; lectures<br>
+          Community monument projects<br>
+          Press &amp; media requests<br>
+          Collaborative projects
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT: Form -->
+    <div>
+      <form class="contact-form" action="#" method="POST" onsubmit="handleSubmit(event)">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="your@email.com" required />
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Commission / Exhibition / Speaking / Other" />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell me about your project or inquiry..." required></textarea>
+
+        <button type="submit">Send Message <span>&rarr;</span></button>
+      </form>
+
+      <p id="form-success" style="display: none; margin-top: 1.5rem; color: var(--sand); font-family: var(--serif); font-size: 1.1rem; font-style: italic;">
+        Thank you for reaching out. I&rsquo;ll get back to you soon.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Charles Rencountre. <span>All rights reserved.</span></p>
+  <nav>
+    <a href="gallery.html">Gallery</a> &nbsp;&middot;&nbsp;
+    <a href="about.html">About</a> &nbsp;&middot;&nbsp;
+    <a href="exhibitions.html">Exhibitions</a> &nbsp;&middot;&nbsp;
+    <a href="contact.html">Contact</a>
+  </nav>
+  <p><span>Kul Wicasa Oyate</span></p>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    // Replace this with your actual form handler (Formspree, Netlify Forms, etc.)
+    const form = e.target;
+    form.style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }
+</script>
+</body>
+</html>
