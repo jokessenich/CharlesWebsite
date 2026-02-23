@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charles Rencountre — Activist Artist</title>
+  <meta name="description" content="Charles Rencountre is a Lakota sculptor and activist artist from the Lower Brule Sioux Nation. Creator of 'Not Afraid to Look' at Standing Rock.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+/* ============================================================
+   CHARLES RENCOUNTRE — Global Styles
+   ============================================================ */
+
+:root {
+  --earth: #12100e;
+  --earth-mid: #1a1714;
+  --earth-light: #23201b;
+  --sand: #c4a97d;
+  --sand-light: #d4be96;
+  --cream: #f0e8d8;
+  --ochre: #b8763e;
+  --ochre-deep: #8b5a2b;
+  --rust: #9b4423;
+  --sky: #4a6670;
+  --stone: #7a7368;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--sand) var(--earth);
+}
+
+body {
+  background: var(--earth);
+  color: var(--cream);
+  font-family: var(--sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Grain */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+img { display: block; max-width: 100%; }
+a { cursor: pointer; color: inherit; }
+
+/* ============ NAVIGATION ============ */
+nav#nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 1.8rem 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+nav#nav.scrolled {
+  padding: 1rem 3.5rem;
+  background: rgba(18,16,14,0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--sand-light);
+  text-decoration: none;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 400;
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.3s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--sand);
+  transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav-links a:hover { color: var(--cream); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--cream); }
+.nav-links a.active::after { width: 100%; }
+
+/* Mobile menu toggle — hidden by default, shown only via media query */
+.nav-toggle {
+  display: none !important;
+  background: none;
+  border: none;
+  width: 28px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--cream);
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle span:nth-child(1) { top: 0; }
+.nav-toggle span:nth-child(2) { top: 50%; }
+.nav-toggle span:nth-child(3) { bottom: 0; }
+
+.nav-toggle.open span:nth-child(1) { top: 50%; transform: rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { bottom: 50%; transform: rotate(-45deg); }
+
+/* ============ PAGE HERO (inner pages) ============ */
+.page-hero {
+  padding: 12rem 3.5rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 60% 30%, rgba(184,118,62,0.06) 0%, transparent 60%),
+    linear-gradient(180deg, var(--earth) 0%, var(--earth-mid) 100%);
+}
+
+.page-hero .section-label {
+  position: relative;
+  z-index: 2;
+}
+
+.page-hero-title {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 2;
+  margin-top: 0.8rem;
+}
+
+.page-hero-title em { font-style: italic; color: var(--sand); }
+
+.page-hero-desc {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-weight: 300;
+  color: var(--sand-light);
+  margin-top: 1.5rem;
+  max-width: 550px;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
+
+/* ============ SHARED SECTION ELEMENTS ============ */
+.section-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--sand);
+  font-weight: 400;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 300;
+  margin-top: 0.5rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 3.5rem;
+  margin-bottom: 4rem;
+}
+
+.section-link {
+  color: var(--sand);
+  text-decoration: none;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s;
+  flex-shrink: 0;
+}
+.section-link:hover { color: var(--cream); }
+.section-link .arrow { transition: transform 0.3s; display: inline-block; }
+.section-link:hover .arrow { transform: translateX(5px); }
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(196,169,125,0.25), transparent);
+  margin: 0 5%;
+}
+
+/* ============ GALLERY GRID (used on home + gallery pages) ============ */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 8px;
+  gap: 6px;
+  padding: 0 3.5rem;
+}
+
+.work-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--earth-light);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+.work-card.visible { opacity: 1; transform: translateY(0); }
+
+.work-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.7s ease;
+  filter: brightness(0.85) saturate(0.9);
+}
+
+.work-card:hover img {
+  transform: scale(1.04);
+  filter: brightness(1) saturate(1);
+}
+
+.work-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(18,16,14,0.9) 0%, rgba(18,16,14,0) 55%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.8rem;
+}
+.work-card:hover .work-card-overlay { opacity: 1; }
+
+.work-card-title {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  transform: translateY(10px);
+  transition: transform 0.4s ease;
+}
+.work-card:hover .work-card-title { transform: translateY(0); }
+
+.work-card-meta {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sand);
+  margin-top: 0.4rem;
+  transform: translateY(10px);
+  transition: transform 0.4s 0.05s ease;
+}
+.work-card:hover .work-card-meta { transform: translateY(0); }
+
+/* Home page masonry layout */
+.work-grid--home .work-card:nth-child(1) { grid-column: 1 / 8; grid-row: span 55; }
+.work-grid--home .work-card:nth-child(2) { grid-column: 8 / 13; grid-row: span 40; }
+.work-grid--home .work-card:nth-child(3) { grid-column: 8 / 13; grid-row: span 38; }
+.work-grid--home .work-card:nth-child(4) { grid-column: 1 / 5; grid-row: span 45; }
+.work-grid--home .work-card:nth-child(5) { grid-column: 5 / 8; grid-row: span 45; }
+
+/* Gallery page — uniform grid */
+.work-grid--gallery {
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  gap: 6px;
+}
+
+.work-grid--gallery .work-card {
+  aspect-ratio: 3/4;
+  grid-column: auto;
+  grid-row: auto;
+}
+
+.work-grid--gallery .work-card-overlay {
+  opacity: 0;
+}
+
+/* Stagger visibility delays */
+.work-card:nth-child(2).visible { transition-delay: 0.1s; }
+.work-card:nth-child(3).visible { transition-delay: 0.2s; }
+.work-card:nth-child(4).visible { transition-delay: 0.3s; }
+.work-card:nth-child(5).visible { transition-delay: 0.4s; }
+
+/* Gallery filter bar */
+.gallery-filters {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 3.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: none;
+  border: 1px solid rgba(196,169,125,0.2);
+  color: var(--sand-light);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--sand);
+  color: var(--earth);
+  border-color: var(--sand);
+}
+
+/* ============ ABOUT PAGE SPECIFICS ============ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 5rem;
+  padding: 0 3.5rem 8rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.about-image {
+  position: relative;
+  overflow: hidden;
+  position: sticky;
+  top: 8rem;
+}
+
+.about-image img {
+  width: 100%;
+  filter: brightness(0.9) saturate(0.95);
+}
+
+.about-image::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(196,169,125,0.15);
+  pointer-events: none;
+}
+
+.about-body h2 {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 3rem 0 1.2rem;
+  color: var(--cream);
+}
+
+.about-body h2:first-of-type { margin-top: 0; }
+
+.about-body p {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--sand-light);
+  font-weight: 300;
+  margin-bottom: 1.2rem;
+}
+
+.about-body blockquote {
+  border-left: 2px solid var(--ochre);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--sand);
+  line-height: 1.65;
+}
+
+/* ============ TIMELINE ============ */
+.timeline-list {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 3.5rem 8rem;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 2.5rem;
+  padding: 1.8rem 0;
+  border-top: 1px solid rgba(196,169,125,0.08);
+  opacity: 0;
+  transform: translateY(18px);
+  transition: all 0.6s ease;
+}
+.timeline-item.visible { opacity: 1; transform: translateY(0); }
+
+.timeline-year {
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--sand);
+  font-weight: 300;
+  padding-top: 0.1rem;
+}
+
+.timeline-content h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+}
+
+.timeline-content p {
+  font-size: 0.82rem;
+  color: var(--stone);
+  line-height: 1.65;
+}
+
+/* ============ CONTACT ============ */
+.contact-section {
+  padding: 0 3.5rem 10rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.contact-info-block {
+  margin-bottom: 2.5rem;
+}
+
+.contact-info-block h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.6rem;
+}
+
+.contact-info-block p,
+.contact-info-block a {
+  font-size: 0.9rem;
+  color: var(--sand-light);
+  line-height: 1.8;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-info-block a:hover { color: var(--cream); }
+
+.contact-form label {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--sand);
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: var(--earth-light);
+  border: 1px solid rgba(196,169,125,0.12);
+  color: var(--cream);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1.5rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--sand);
+}
+
+.contact-form textarea { min-height: 160px; resize: vertical; }
+
+.contact-form button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  border: 1px solid var(--sand);
+  background: none;
+  color: var(--sand);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.contact-form button:hover {
+  background: var(--sand);
+  color: var(--earth);
+}
+
+/* ============ FOOTER ============ */
+footer {
+  padding: 2rem 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(196,169,125,0.06);
+  font-size: 0.68rem;
+  color: var(--stone);
+  letter-spacing: 0.1em;
+}
+
+footer span { font-family: var(--serif); font-style: italic; }
+
+footer a {
+  color: var(--stone);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+footer a:hover { color: var(--sand); }
+
+/* ============ ANIMATIONS ============ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; height: 40px; }
+  50% { opacity: 1; height: 55px; }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.8s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 1.5rem; }
+  nav.scrolled { padding: 0.8rem 1.5rem; }
+
+  .nav-toggle { display: block !important; }
+
+  .nav-links {
+    display: none !important;
+    position: fixed;
+    top: 0; right: 0;
+    width: 280px;
+    height: 100vh;
+    background: var(--earth);
+    flex-direction: column;
+    padding: 6rem 2rem 2rem;
+    gap: 1.5rem;
+    border-left: 1px solid rgba(196,169,125,0.1);
+    z-index: 100;
+  }
+
+  .nav-links.open {
+    display: flex !important;
+  }
+
+  .nav-links a { font-size: 0.85rem; }
+
+  .page-hero { padding: 10rem 1.5rem 3rem; }
+  .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 0 1.5rem; }
+
+  .work-grid {
+    grid-template-columns: 1fr 1fr !important;
+    grid-auto-rows: auto !important;
+    gap: 4px;
+    padding: 0 1.5rem;
+  }
+
+  .work-grid--home .work-card,
+  .work-grid--gallery .work-card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    aspect-ratio: 3/4;
+  }
+  .work-grid--home .work-card:nth-child(1) { grid-column: 1 / -1 !important; aspect-ratio: 16/10; }
+
+  .work-card-overlay {
+    opacity: 1 !important;
+    background: linear-gradient(to top, rgba(18,16,14,0.85) 0%, rgba(18,16,14,0) 50%) !important;
+  }
+
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; padding: 0 1.5rem 5rem; }
+  .about-image { position: static; }
+
+  .contact-section { padding: 0 1.5rem 6rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+
+  .gallery-filters { padding: 0 1.5rem; }
+  .timeline-list { padding: 0 1.5rem 5rem; }
+  .timeline-item { grid-template-columns: 70px 1fr; gap: 1.5rem; }
+
+  footer { flex-direction: column; gap: 0.8rem; text-align: center; padding: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .work-grid { grid-template-columns: 1fr !important; }
+  .work-grid--home .work-card:nth-child(1) { aspect-ratio: 3/4 !important; }
+}
+
+/* Footer links (not a <nav>) */
+.footer-links {
+  display: inline;
+}
+
+.footer-links a {
+  color: var(--stone);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--sand);
+}
+
+</style>
+  <style>
+    /* HOME-ONLY STYLES */
+    .hero {
+      height: 100vh;
+      min-height: 700px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+    .hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      filter: brightness(0.5) contrast(1.1);
+    }
+    .hero-gradient {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background:
+        linear-gradient(to top, var(--earth) 0%, rgba(18,16,14,0.5) 40%, rgba(18,16,14,0.05) 65%, rgba(18,16,14,0.35) 100%),
+        linear-gradient(to right, rgba(18,16,14,0.45) 0%, transparent 55%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding: 0 3.5rem 6rem;
+      max-width: 850px;
+    }
+    .hero-eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 1s 0.2s ease forwards;
+    }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(3.2rem, 7.5vw, 6.5rem);
+      font-weight: 300;
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      opacity: 0;
+      animation: fadeUp 1.2s 0.4s ease forwards;
+    }
+    .hero-title em { font-style: italic; color: var(--sand); }
+    .hero-subtitle {
+      font-family: var(--serif);
+      font-size: clamp(1rem, 1.8vw, 1.35rem);
+      font-weight: 300;
+      color: var(--sand-light);
+      margin-top: 1.5rem;
+      letter-spacing: 0.04em;
+      line-height: 1.5;
+      max-width: 500px;
+      opacity: 0;
+      animation: fadeUp 1s 0.7s ease forwards;
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      right: 3.5rem;
+      z-index: 3;
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--stone);
+      writing-mode: vertical-rl;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      opacity: 0;
+      animation: fadeUp 1s 1.2s ease forwards;
+    }
+    .hero-scroll::after {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--sand), transparent);
+      animation: scrollPulse 2.5s ease infinite;
+    }
+    .statement {
+      padding: 10rem 3.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .statement-diamond {
+      width: 10px; height: 10px;
+      background: var(--ochre);
+      transform: rotate(45deg);
+      margin-bottom: 3rem;
+      opacity: 0;
+    }
+    .statement-diamond.visible { animation: fadeUp 0.8s ease forwards; }
+    .statement-text {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3.2vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.55;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+    .statement-text.visible { opacity: 1; transform: translateY(0); }
+    .statement-text strong { color: var(--sand); font-weight: 600; }
+
+    .quote-section {
+      padding: 10rem 3.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .quote-section::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 450px; height: 450px;
+      border: 1px solid var(--ochre);
+      opacity: 0.05;
+      border-radius: 50%;
+    }
+    .quote-mark {
+      font-family: var(--serif);
+      font-size: 5rem;
+      color: var(--ochre);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: -1rem;
+      position: relative;
+      z-index: 2;
+    }
+    .quote-text {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2.5vw, 2rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.7;
+      max-width: 750px;
+      margin: 0 auto;
+      color: var(--sand-light);
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+      transform: translateY(25px);
+      transition: all 1s ease;
+    }
+    .quote-text.visible { opacity: 1; transform: translateY(0); }
+    .quote-attr {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-top: 2.5rem;
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.8s 0.3s ease;
+    }
+    .quote-attr.visible { opacity: 1; }
+
+    .home-about {
+      padding: 8rem 3.5rem 10rem;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
+    }
+    .home-about-img { position: relative; overflow: hidden; }
+    .home-about-img img { width: 100%; filter: brightness(0.9) saturate(0.95); }
+    .home-about-img::after {
+      content: '';
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(196,169,125,0.15);
+      pointer-events: none;
+    }
+    .home-about-text .label { font-size: 0.68rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--sand); margin-bottom: 1.5rem; }
+    .home-about-text h2 { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.15; margin-bottom: 2rem; }
+    .home-about-text p { font-size: 0.92rem; line-height: 1.9; color: var(--sand-light); font-weight: 300; margin-bottom: 1.4rem; }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      padding: 0.9rem 2.2rem;
+      border: 1px solid var(--sand);
+      color: var(--sand);
+      text-decoration: none;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: all 0.4s ease;
+    }
+    .cta-btn:hover { background: var(--sand); color: var(--earth); }
+
+    .home-contact {
+      padding: 10rem 3.5rem;
+      text-align: center;
+      position: relative;
+    }
+    .home-contact::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 5%; right: 5%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(196,169,125,0.25), transparent);
+    }
+    .home-contact h2 { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 300; line-height: 1.1; margin: 1.5rem 0; }
+    .home-contact h2 em { font-style: italic; color: var(--sand); }
+    .home-contact p { font-size: 0.92rem; color: var(--stone); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.7; }
+    .contact-links { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+    .contact-link-item {
+      color: var(--sand);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.8rem 0;
+      position: relative;
+      transition: color 0.3s;
+    }
+    .contact-link-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0.4rem; left: 0;
+      width: 100%; height: 1px;
+      background: var(--ochre);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .contact-link-item:hover::after { transform: scaleX(1); transform-origin: left; }
+    .contact-link-item:hover { color: var(--cream); }
+
+    @media (max-width: 900px) {
+      .hero-content { padding: 0 1.5rem 4rem; }
+      .hero-scroll { display: none; }
+      .statement { padding: 6rem 1.5rem; }
+      .quote-section { padding: 6rem 1.5rem; }
+      .home-about { grid-template-columns: 1fr; gap: 3rem; padding: 6rem 1.5rem; }
+      .home-contact { padding: 6rem 1.5rem; }
+      .home-contact .contact-links { flex-direction: column; gap: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">Charles Rencountre</a>
+  <button class="nav-toggle" style="display:none" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="exhibitions.html">Exhibitions</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img">
+    <img src="images/standing-rock-not-afraid-to-look.jpg" alt="Not Afraid to Look sculpture at Standing Rock" />
+  </div>
+  <div class="hero-gradient"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Kul Wicasa Oyate &middot; Lower Brule Sioux Nation</p>
+    <h1 class="hero-title">Not Afraid<br><em>to Look</em></h1>
+    <p class="hero-subtitle">Monumental sculpture as prayer, as protest, as a permanent mark upon the land.</p>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement">
+  <div class="statement-diamond"></div>
+  <p class="statement-text">
+    Art that <strong>speaks truth to power</strong> in places where it is needed. The work of Charles Rencountre stands at the intersection of <strong>Lakota tradition</strong> and contemporary activism &mdash; sculpture born of ceremony, carved in defiance, erected in prayer.
+  </p>
+</section>
+
+<!-- GALLERY PREVIEW -->
+<section class="gallery" style="padding: 4rem 0 8rem; position: relative;">
+  <div class="divider" style="margin-bottom: 4rem;"></div>
+  <div class="section-header">
+    <div>
+      <p class="section-label">Selected Works</p>
+      <h2 class="section-title">Sculpture &amp; Monuments</h2>
+    </div>
+    <a href="gallery.html" class="section-link">View All <span class="arrow">&rarr;</span></a>
+  </div>
+  <div class="work-grid work-grid--home">
+    <div class="work-card">
+      <img src="images/standing-rock-not-afraid-to-look.jpg" alt="Not Afraid to Look" />
+      <div class="work-card-overlay">
+        <h3 class="work-card-title">Not Afraid to Look</h3>
+        <p class="work-card-meta">Standing Rock &middot; 2016</p>
+      </div>
+    </div>
+    <div class="work-card">
+      <img src="images/eya-west-wind-2002.jpg" alt="EYA — West Wind" />
+      <div class="work-card-overlay">
+        <h3 class="work-card-title">EYA &mdash; West Wind</h3>
+        <p class="work-card-meta">Bronze &middot; 2002</p>
+      </div>
+    </div>
+    <div class="work-card">
+      <img src="images/lakota-christ.jpg" alt="Lakota Christ" />
+      <div class="work-card-overlay">
+        <h3 class="work-card-title">Lakota Christ</h3>
+        <p class="work-card-meta">Wood Sculpture</p>
+      </div>
+    </div>
+    <div class="work-card">
+      <img src="images/lakota-madonna-juniper-2006.jpg" alt="Lakota Madonna" />
+      <div class="work-card-overlay">
+        <h3 class="work-card-title">Lakota Madonna</h3>
+        <p class="work-card-meta">Juniper &middot; 2006</p>
+      </div>
+    </div>
+    <div class="work-card">
+      <img src="images/yaqui-christ-bronze-2006.jpg" alt="Yaqui Christ" />
+      <div class="work-card-overlay">
+        <h3 class="work-card-title">Yaqui Christ</h3>
+        <p class="work-card-meta">Bronze &middot; 2006</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <div class="quote-mark">&ldquo;</div>
+  <p class="quote-text">When we return to the spirit world, we are all the same color as the water.</p>
+  <p class="quote-attr">&mdash; Shared during Inipi ceremony at Standing Rock</p>
+</section>
+
+<!-- ABOUT PREVIEW -->
+<section class="home-about" id="about">
+  <div class="home-about-img">
+    <img src="images/eya-west-wind-2002.jpg" alt="EYA — West Wind by Charles Rencountre" />
+  </div>
+  <div class="home-about-text">
+    <p class="label">The Artist</p>
+    <h2>Charles Rencountre</h2>
+    <p>A member of the Sicaŋġu people from the Lower Brule Reservation in South Dakota, Charles Rencountre is a sculptor whose monumental works stand as testaments to Indigenous resilience, water protection, and the enduring power of Lakota ceremony.</p>
+    <p>Graduated top of his class from the Institute of American Indian Arts in Santa Fe, his most celebrated work &mdash; the eight-foot reinforced concrete sculpture &ldquo;Not Afraid to Look&rdquo; &mdash; remains the only physical evidence of the ten-month gathering of Water Protectors at Standing Rock.</p>
+    <a href="about.html" class="cta-btn">Read Full Bio <span>&rarr;</span></a>
+  </div>
+</section>
+
+<!-- CONTACT TEASER -->
+<section class="home-contact">
+  <p class="section-label">Inquiries</p>
+  <h2>Let&rsquo;s <em>Connect</em></h2>
+  <p>For commissions, exhibitions, speaking engagements, and collaborations.</p>
+  <div class="contact-links">
+    <a href="mailto:hello@charlesrencountre.com" class="contact-link-item">Email</a>
+    <a href="#" class="contact-link-item">Instagram</a>
+    <a href="contact.html" class="contact-link-item">Contact Form</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Charles Rencountre. <span>All rights reserved.</span></p>
+  <div class="footer-links">
+    <a href="gallery.html">Gallery</a> &nbsp;&middot;&nbsp;
+    <a href="about.html">About</a> &nbsp;&middot;&nbsp;
+    <a href="exhibitions.html">Exhibitions</a> &nbsp;&middot;&nbsp;
+    <a href="contact.html">Contact</a>
+  </div>
+  <p><span>Kul Wicasa Oyate</span></p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
