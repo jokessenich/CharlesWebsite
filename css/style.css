@@ -48,7 +48,7 @@ img { display: block; max-width: 100%; }
 a { cursor: pointer; color: inherit; }
 
 /* ============ NAVIGATION ============ */
-nav {
+#nav {
   position: fixed;
   top: 0;
   width: 100%;
@@ -59,6 +59,11 @@ nav {
   align-items: center;
   transition: all 0.5s ease;
 }
+#footer-nav
+{
+   bottom: 0;
+}
+
 
 nav.scrolled {
   padding: 1rem 3.5rem;
